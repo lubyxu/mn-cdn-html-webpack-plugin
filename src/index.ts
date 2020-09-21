@@ -31,6 +31,7 @@ interface Options {
 
 class ExternalHtmlWebpackPlugin {
   externals: ExternalLink[]
+  headTags: HtmlTagObject[]
   bodyTags: HtmlTagObject[]
 
   constructor(options: Options) {
@@ -44,7 +45,17 @@ class ExternalHtmlWebpackPlugin {
           defer:false,
           src: item.src,
         },
-      }));
+      })) || [];
+
+    this.headTags = options.externals.filter(item => item.type === 'css')
+      .map(item => ({
+        tagName: 'link',
+        voidTag: true,
+        attributes: {
+          href: item.src,
+          rel: 'stylesheet'
+        },
+      })) || [];
   }
 
   apply(compiler) {
@@ -57,6 +68,10 @@ class ExternalHtmlWebpackPlugin {
             ...pluginArgs,
             assetTags: {
               ...pluginArgs.assetTags,
+              styles: [
+                ...this.headTags,
+                ...pluginArgs.assetTags.styles,
+              ],
               scripts: [
                 ...this.bodyTags,
                 ...pluginArgs.assetTags.scripts,
