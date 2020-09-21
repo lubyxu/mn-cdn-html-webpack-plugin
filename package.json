@@ -1,7 +1,8 @@
 {
   "name": "mn-cdn-html-webpack-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "author": "lubyxu",
   "license": "MIT",
   "repository": {
