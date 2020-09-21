@@ -1,9 +1,19 @@
 {
   "name": "mn-cdn-html-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "author": "lubyxu",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/lubyxu/mn-cdn-html-webpack-plugin"
+  },
+  "homepage": "https://github.com/lubyxu/mn-cdn-html-webpack-plugin",
+  "description": "inject cdn into html",
+  "keywords": [
+    "external",
+    "cdn",
+    "html-webpack-plugin"
+  ],
   "scripts": {
     "build": "tsc --outDir dist"
   },
