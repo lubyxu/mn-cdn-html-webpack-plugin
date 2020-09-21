@@ -1,0 +1,14 @@
+{
+  "name": "mn-cdn-html-webpack-plugin",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "lubyxu",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --outDir dist"
+  },
+  "devDependencies": {
+    "@types/node": "^14.11.1"
+  },
+  "dependencies": {}
+}
